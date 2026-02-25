@@ -1,0 +1,29 @@
+{
+  "habits": [
+    {"id": 1, "habit_id": "sleep-7-9", "name": "Sleep 7-9 Hours", "icon": "💤", "is_recurring": true, "duration": "365 days", "streak": 0},
+    {"id": 2, "habit_id": "no-alcohol", "name": "No Alcohol", "icon": "🚫", "is_recurring": true, "duration": "365 days", "streak": 0},
+    {"id": 3, "habit_id": "screens-off", "name": "Screens Off 60min Before Bed", "icon": "📵", "is_recurring": true, "duration": "90 days", "streak": 0},
+    {"id": 4, "habit_id": "cool-room", "name": "Cool Dark Room (18°C)", "icon": "❄️", "is_recurring": true, "duration": "90 days", "streak": 0},
+    {"id": 5, "habit_id": "protein-dinner", "name": "Protein-Centered Dinner", "icon": "🥩", "is_recurring": true, "duration": "90 days", "streak": 0},
+    {"id": 6, "habit_id": "evening-walk", "name": "Evening Walk 20-30min", "icon": "🚶", "is_recurring": true, "duration": "90 days", "streak": 0},
+    {"id": 7, "habit_id": "mindfulness", "name": "Mindfulness / Breathwork", "icon": "🧘", "is_recurring": true, "duration": "90 days", "streak": 0},
+    {"id": 8, "habit_id": "evening-hygiene", "name": "Evening Hygiene Routine", "icon": "🪥", "is_recurring": true, "duration": "90 days", "streak": 0},
+    {"id": 9, "habit_id": "hydrate-wake", "name": "Hydrate 500ml on Wake", "icon": "💧", "is_recurring": true, "duration": "90 days", "streak": 0},
+    {"id": 10, "habit_id": "bright-light", "name": "Bright Light 10-15min", "icon": "☀️", "is_recurring": true, "duration": "90 days", "streak": 0},
+    {"id": 11, "habit_id": "morning-supps", "name": "Morning Supplements", "icon": "💊", "is_recurring": true, "duration": "90 days", "streak": 0},
+    {"id": 12, "habit_id": "protein-breakfast", "name": "Protein Breakfast 40g", "icon": "🍳", "is_recurring": true, "duration": "90 days", "streak": 0},
+    {"id": 13, "habit_id": "morning-hygiene", "name": "Oral Care + Sunscreen", "icon": "🦷", "is_recurring": true, "duration": "90 days", "streak": 0},
+    {"id": 14, "habit_id": "stability", "name": "Stability Work 10min", "icon": "🧘‍♂️", "is_recurring": true, "duration": "365 days", "streak": 0},
+    {"id": 15, "habit_id": "zone2", "name": "Zone 2 Cardio", "icon": "🚴", "is_recurring": true, "duration": "365 days", "streak": 0},
+    {"id": 16, "habit_id": "strength", "name": "Strength Training", "icon": "🏋️", "is_recurring": true, "duration": "365 days", "streak": 0},
+    {"id": 17, "habit_id": "vo2max", "name": "VO2 Max Intervals", "icon": "🏃‍♂️", "is_recurring": true, "duration": "365 days", "streak": 0},
+    {"id": 18, "habit_id": "protein-target", "name": "Protein Target 110-180g", "icon": "🥩", "is_recurring": true, "duration": "365 days", "streak": 0},
+    {"id": 19, "habit_id": "hydrate-3l", "name": "Hydrate 3L Water", "icon": "💧", "is_recurring": true, "duration": "90 days", "streak": 0},
+    {"id": 20, "habit_id": "no-sugar", "name": "No Sugar / Refined Carbs", "icon": "🚫", "is_recurring": true, "duration": "90 days", "streak": 0},
+    {"id": 21, "habit_id": "healthy-fats", "name": "Healthy Fats EVOO/Avocado", "icon": "🥑", "is_recurring": true, "duration": "90 days", "streak": 0},
+    {"id": 22, "habit_id": "fermented", "name": "Fermented Foods", "icon": "🥒", "is_recurring": true, "duration": "90 days", "streak": 0},
+    {"id": 23, "habit_id": "nature", "name": "Nature / Stillness Time", "icon": "🌲", "is_recurring": true, "duration": "90 days", "streak": 0}
+  ],
+  "completions": {},
+  "streaks": {}
+}
