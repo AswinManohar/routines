@@ -1,0 +1,8 @@
+#!/bin/bash
+# Add this to your crontab with: crontab -e
+
+# Habit Reminders - Check every 30 minutes
+*/30 * * * * /usr/bin/python3 ~/.openclaw/skills/habit-reminders/scripts/check_reminders.py >> ~/.openclaw/workspace-general/routine-tracker-react/reminders/cron.log 2>&1
+
+# Daily reset at midnight (clears sent reminders)
+0 0 * * * rm -f ~/.openclaw/workspace-general/routine-tracker-react/reminders/sent_today.json
