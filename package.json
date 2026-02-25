@@ -2,6 +2,7 @@
   "name": "routine-tracker-react",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://AswinManohar.github.io/routines",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -9,7 +10,15 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "debug": "react-scripts start --inspect",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   },
   "browserslist": {
     "production": [

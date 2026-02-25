@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
+import DailyRoutines from './DailyRoutines';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
+const API_URL = process.env.REACT_APP_API_URL || 'http://pop-os.tailf0835c.ts.net:8000/api';
 const FALLBACK_DATA = '/data.json';
 
 // Fallback week data generator
@@ -219,17 +220,19 @@ const RoutineCard = ({ routine, onClick, onDayClick, onDelete }) => {
   return (
     <div className="routine-card" onClick={() => onClick(routine)}>
       <div className="routine-header">
-        <div className="routine-title">
-          <span className="routine-icon">{routine.icon}</span>
-          <span className="routine-name">{routine.name}</span>
-          {routine.is_recurring && (
-            <span className="recurring-badge">🔄 {routine.duration}</span>
-          )}
+        <div className="routine-main">
+          <div className="routine-title-row">
+            <span className="routine-icon">{routine.icon}</span>
+            <span className="routine-name">{routine.name}</span>
+          </div>
+          <div className="routine-meta-row">
+            {routine.is_recurring && (
+              <span className="meta-badge duration">🔄 {routine.duration}</span>
+            )}
+            <span className="meta-badge weekly-progress">{percent}% this week</span>
+          </div>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <div className="weekly-percentage">{percent}% this week</div>
-          <button className="delete-btn" onClick={handleDelete} title="Delete habit">🗑️</button>
-        </div>
+        <button className="delete-btn" onClick={handleDelete} title="Delete habit">🗑️</button>
       </div>
       
       <WeeklyBars 
@@ -241,7 +244,7 @@ const RoutineCard = ({ routine, onClick, onDayClick, onDelete }) => {
       <div className="routine-stats">
         <div className="stat">
           <div className="stat-value completed">{completedCount}</div>
-          <div className="stat-label">Completed</div>
+          <div className="stat-label">Done</div>
         </div>
         <div className="stat">
           <div className="stat-value partial">
@@ -255,7 +258,7 @@ const RoutineCard = ({ routine, onClick, onDayClick, onDelete }) => {
           </div>
           <div className="stat-label">Missed</div>
         </div>
-        <div className="stat">
+        <div className="stat today-stat">
           <div className="stat-value">
             {todayData ? `${Math.round(todayData.completion)}%` : '-'}
           </div>
@@ -461,6 +464,7 @@ const AddHabitModal = ({ onClose, onAdd }) => {
 // ==================== MAIN APP ====================
 
 function App() {
+  const [currentView, setCurrentView] = useState('habits'); // 'habits' or 'routines'
   const [routines, setRoutines] = useState([]);
   const [selectedRoutine, setSelectedRoutine] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
@@ -526,9 +530,45 @@ function App() {
     }
   }, [fetchRoutines]);
 
+  if (currentView === 'routines') {
+    return (
+      <div className="app">
+        <nav className="nav-bar">
+          <button 
+            className={currentView === 'habits' ? 'active' : ''} 
+            onClick={() => setCurrentView('habits')}
+          >
+            📊 Habits
+          </button>
+          <button 
+            className={currentView === 'routines' ? 'active' : ''} 
+            onClick={() => setCurrentView('routines')}
+          >
+            📅 Routines
+          </button>
+        </nav>
+        <DailyRoutines />
+      </div>
+    );
+  }
+
   if (loading && routines.length === 0) {
     return (
       <div className="app">
+        <nav className="nav-bar">
+          <button 
+            className={currentView === 'habits' ? 'active' : ''} 
+            onClick={() => setCurrentView('habits')}
+          >
+            📊 Habits
+          </button>
+          <button 
+            className={currentView === 'routines' ? 'active' : ''} 
+            onClick={() => setCurrentView('routines')}
+          >
+            📅 Routines
+          </button>
+        </nav>
         <div style={{ textAlign: 'center', padding: '60px', color: '#8b949e' }}>
           <h1>📊 Routine Tracker</h1>
           <p>Loading your habits...</p>
@@ -539,6 +579,21 @@ function App() {
 
   return (
     <div className="app">
+      <nav className="nav-bar">
+        <button 
+          className={currentView === 'habits' ? 'active' : ''} 
+          onClick={() => setCurrentView('habits')}
+        >
+          📊 Habits
+        </button>
+        <button 
+          className={currentView === 'routines' ? 'active' : ''} 
+          onClick={() => setCurrentView('routines')}
+        >
+          📅 Routines
+        </button>
+      </nav>
+      
       <header className="app-header">
         <h1>📊 Routine Tracker</h1>
         <p className="subtitle">Click any routine for monthly view • Click bars to toggle</p>
